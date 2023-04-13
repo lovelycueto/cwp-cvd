@@ -58,6 +58,25 @@ function cvd_custom_post (){
     );
     register_post_type('projectPost', $project_args);
    
+
+    $servicescontent_label = array(
+        'name'              => __('servicescontent post', 'textdomain'),
+        'singular_name'     => __('servicescontent post', 'textdomain'),
+        'add_new'           => __('add servicescontent post', 'textdomain'),
+        'add_new_item'   => __('Add New servicescontent', 'textdomain'),
+        'edit_item'         =>__('edit servicescontent post', 'textdomain'),
+        'all_items'         =>__('servicescontent post', 'textdomain')
+    );
+    $servicescontent_args = array(
+        'labels'        => $servicescontent_label,
+        'public'        => true,
+        'capability_type' => 'post',
+        'show_ui'       => true,
+        'taxonomies'    => array('post_tag', 'category'),
+        'supports'      => array('title', 'editor', 'thumbnail', 'excerpt')
+    );
+    register_post_type('servicescontentPost', $servicescontent_args);
+   
    
 
 

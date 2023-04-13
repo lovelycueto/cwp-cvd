@@ -102,16 +102,11 @@
 
           <?php if($newQuery->have_posts()) : while($newQuery->have_posts()) : $newQuery->the_post(); ?>
                 <div class="latest__card">
-                <?php
-          $image = get_field('latest_image');
-          if(!empty($image)):
-          ?>
-          <img src="<?php echo esc_url($image['url']) ?>" alt="">
-          <?php endif; ?>
+           <?php echo get_the_post_thumbnail()?>
                     <div class="card__text">
                     <h2><?php the_title() ?></h2>
                     <p> <?php the_content() ?></p>
-                    <a href=""><?php echo get_field('latest_button'); ?></a>
+                    <a href="<?php echo the_permalink()?>"><?php echo get_field('latest_button'); ?></a>
                     </div>
 
 
